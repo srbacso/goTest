@@ -36,8 +36,21 @@ func main() {
 		},
 	}
 
+	pSteve := &stephen
+
 	fmt.Println(alex)
 	fmt.Printf("%+v\n", stephen)
 	fmt.Printf("%+v\n", stephen2)
+
+	pSteve.updateName("Steve")
+	pSteve.print()
 	fmt.Println("Ending")
+}
+
+func (p *person) updateName(newFirstName string) {
+	(*p).firstName = newFirstName
+}
+
+func (p person) print() {
+	fmt.Printf("%+v\n", p)
 }

@@ -20,8 +20,7 @@ func TestNewDeck(t *testing.T) {
 
 func TestSaveToDeckAndNewDeckFromFile(t *testing.T) {
 	const FILENAME = "_deckTesting"
-	if os.Remove(FILENAME) != nil {
-	}
+	os.Remove(FILENAME)
 	d := newDeck()
 	if d.saveToFile(FILENAME) != nil {
 	}
